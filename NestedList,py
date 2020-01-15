@@ -1,0 +1,31 @@
+listOfNamesNscores = []
+listOfScores = []
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        listOfNamesNscores.append([name,score])
+        listOfScores.append(score)
+listOfScores.sort()
+#print(listOfScores)
+lowestScore = listOfScores[0]
+#print(lowestScore)
+count = 0
+err = ''
+while True:
+    try:
+        listOfScores.remove(lowestScore)
+    except:
+        break
+#print(listOfScores)
+lowestScore = listOfScores[0]
+#print(lowestScore)
+secondLast = []
+for a in range(len(listOfNamesNscores)):
+    if(listOfNamesNscores[a][1]==lowestScore):
+        secondLast.append(listOfNamesNscores[a][0])
+secondLast.sort()
+for a in secondLast:
+    print(a)
+    
+
